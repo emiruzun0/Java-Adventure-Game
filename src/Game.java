@@ -22,6 +22,9 @@ public class Game {
             System.out.println("0 - Exit Game");
             System.out.println("1 - Safe House --> This is safe place for you, no enemy ! ");
             System.out.println("2 - Store --> You can buy weapon or armor");
+            System.out.println("3 - Cave --> Award : <Food>, be careful, there are zombies here ! ");
+            System.out.println("4 - Forest --> Award : <Firewood>, be careful, there are vampires here ! ");
+            System.out.println("5 - River --> Award : <River>, be careful, there are bears here ! ");
             System.out.print("Please enter a number to go to this location  : ");
             int selectLoc = input.nextInt();
             switch (selectLoc){
@@ -34,8 +37,17 @@ public class Game {
                 case 2:
                     location = new ToolStore(player);
                     break;
+                case 3:
+                    location = new Cave(player);
+                    break;
+                case 4:
+                    location = new Forest(player);
+                    break;
+                case 5:
+                    location = new River(player);
+                    break;
                 default:
-                    location = new SafeHouse(player);
+                    System.out.println("Please choose a valid location ! ");
             }
 
             if(location == null){
