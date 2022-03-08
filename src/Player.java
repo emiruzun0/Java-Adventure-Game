@@ -5,9 +5,13 @@ public class Player {
     private int health;
     private int originalHealth;
     private int money;
+    private boolean completedCave;
+    private boolean completedForest;
+    private boolean completedRiver;
+    private boolean completedMine;
     private String name;
     private String charName;
-    private Scanner input = new Scanner(System.in);
+    private final Scanner input = new Scanner(System.in);
     private Inventory inventory;
 
     public Player(String name) {
@@ -134,5 +138,37 @@ public class Player {
 
     public Weapon getWeapon(){
         return this.getInventory().getWeapon();
+    }
+
+    public boolean isCompletedCave() {
+        return completedCave;
+    }
+
+    public void setCompletedCave(boolean completedCave) {
+        this.completedCave = completedCave;
+    }
+
+    public boolean isCompletedForest() {
+        return completedForest;
+    }
+
+    public void setCompletedForest(boolean completedForest) {
+        this.completedForest = completedForest;
+    }
+
+    public boolean isCompletedRiver() {
+        return completedRiver;
+    }
+
+    public void setCompletedRiver(boolean completedRiver) {
+        this.completedRiver = completedRiver;
+    }
+
+    public boolean isCompletedMine() {
+        return completedMine;
+    }
+
+    public void setCompletedMine(boolean completedMine) {
+        this.completedMine = completedMine;
     }
 }
